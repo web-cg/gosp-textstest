@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <a class="navbtn" href="index.html">Home</a>
+    <a class="navbtn" href="Gossip.html">Gossip</a>
+    <a class="navbtn" href="Posts.html">Posts</a>
+    <a class="navbtn" href="Pics.html">Pics</a>
+    <a class="navbtn" href="Parties.html">Parties</a>
+    <a class="navbtn" href="Links.html">Links</a>
+    <a class="navbtn" href="More.html">More</a>
+  </div>
+
+  <!-- Schwarzer Scroll-Indikator -->
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+
+</body>
+<script>
+  // Scroll-Indikator Dynamik
+  const scrollIndicator = document.getElementById('scrollIndicator');
+
+function updateScrollIndicator() {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+  scrollIndicator.style.height = `${Math.max(5, scrollPercentage)}%`;
+}
+
+window.addEventListener('scroll', updateScrollIndicator);
+window.addEventListener('resize', updateScrollIndicator);
+updateScrollIndicator(); // Initialer Aufruf
+
+</script>
+</html>

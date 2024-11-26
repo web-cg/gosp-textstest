@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gossip</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <a class="navbtn" href="index.html">Home</a>
+    <a class="navbtn" href="Gossip.html">Gossip</a>
+    <a class="navbtn" href="Posts.html">Posts</a>
+    <a class="navbtn" href="Pics.html">Pics</a>
+    <a class="navbtn" href="Parties.html">Parties</a>
+    <a class="navbtn" href="Links.html">Links</a>
+    <a class="navbtn" href="More.html">More</a>
+  </div>
+
+  <h1>Your Gossip </h1>
+  <form id="contentForm">
+    <input type="text" id="titleInput" placeholder="Titel eingeben..." required>
+    
+    <div class="file-upload">
+      <input type="file" id="imageInput" accept="image/*" required>
+      <div id="imagePreviewContainer">
+        <img id="imagePreview" src="#" alt="Vorschau" style="display: none;">
+        <button id="removeImage" type="button" style="display: none;">&times;</button>
+      </div>
+    </div>
+
+    <textarea id="textInput" placeholder="Text eingeben..." rows="5" required></textarea>
+    <button type="submit">Speichern</button>
+    <button id="clearAll" type="button" class="danger">Alles löschen</button>
+  </form>
+
+  <div id="contentBoxes"></div>
+
+  <!-- Bestätigungsdialog -->
+  <div id="confirmationDialog" class="modal hidden">
+    <div class="modal-content">
+      <p>Sind Sie sicher, dass Sie alles löschen möchten?</p>
+      <button id="confirmDelete" class="danger">Ja, löschen</button>
+      <button id="cancelDelete">Abbrechen</button>
+    </div>
+  </div>
+
+  <!-- Modal für das vergrößerte Bild -->
+  <div id="imageModal" class="modal hidden">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Vergrößertes Bild">
+      <button id="closeModal" class="danger">Schließen</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
